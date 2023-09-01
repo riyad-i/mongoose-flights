@@ -15,6 +15,7 @@ const flightSchema = new mongoose.Schema({
     },
     departs : {
         type : Date,
+        required: true
     }
 })
 

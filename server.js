@@ -22,8 +22,8 @@ app.use(express.json())
 app.get('/', async (req, res) => {
     try {
         const flights = await Flight.find({})
-        // res.render('index', {flights})
-        res.send(flights)
+        res.render('Index', {flights})
+        // res.send(flights)
     } catch (error) {
         console.log(error);
     }

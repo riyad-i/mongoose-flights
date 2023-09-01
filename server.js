@@ -15,10 +15,19 @@ app.use(express.json())
 
 
 
+
+
+
 //index
-app.get('/', (req, res) => {
-    
-    res.render('index', )
+app.get('/', async (req, res) => {
+    try {
+        const flights = await Flight.find({})
+        // res.render('index', {flights})
+        res.send(flights)
+    } catch (error) {
+        console.log(error);
+    }
+
 })
 
 

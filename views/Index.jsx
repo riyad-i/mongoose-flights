@@ -7,11 +7,12 @@ const index = (props) => {
     return(
         <>
             {flights.map(flight => 
-                <>
-                <h1>{flight.airline}</h1>
-                <h2>{flight.departs.toISOString()}</h2>
-                <h3>{flight.flight}</h3>
-                </>
+                <div key={flight._id}>
+                    <h1>Airline : {flight.airline}</h1>
+                    <h2>Depart date : {flight.departs.toISOString().slice(0,10)}</h2>
+                    <h3>flight number : {flight.flight}</h3>
+                    <br/>
+                </div>
             )}
         </>
     )

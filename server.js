@@ -15,11 +15,13 @@ app.use(express.json())
 
 
 
-
+app.get('/', (req, res) => {
+    res.redirect('/flights')
+})
 
 
 //index
-app.get('/', async (req, res) => {
+app.get('/flights', async (req, res) => {
     try {
         const flights = await Flight.find({})
         res.render('Index', {flights})
@@ -31,11 +33,14 @@ app.get('/', async (req, res) => {
 })
 
 
+app.get('/flights/new', (req, res) => {
+    res.render(New)
+})
 
 
 
 
-app.post('/', async (req, res) => {
+app.post('/flights', async (req, res) => {
     try {
         const newFlight = await Flight.create(req.body)
         res.send(newFlight)

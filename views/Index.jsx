@@ -9,7 +9,7 @@ const index = (props) => {
           <div key={flight._id}>
             <h1>Airline : {flight.airline}</h1>
             <h2>Depart date : {flight.departs.toISOString().slice(0, 10)}</h2>
-            <h3>flight number : {flight.flight}</h3>
+            <h3>flight number : {flight.flightNo}</h3>
             <br />
           </div>
         );

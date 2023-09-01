@@ -7,7 +7,7 @@ const flightSchema = new mongoose.Schema({
         required: true,
         enum: ['American', 'Southwest', 'United']
     },
-    flight: {
+    flightNo: {
         type: Number,
         required: true,
         max : 9999,

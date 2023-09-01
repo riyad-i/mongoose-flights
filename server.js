@@ -7,6 +7,7 @@ const PORT = 3000
 
 const Flight = require('./models/Flight')
 
+
 const jsxEngine = require('jsx-view-engine')
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine());
@@ -34,7 +35,7 @@ app.get('/flights', async (req, res) => {
 
 
 app.get('/flights/new', (req, res) => {
-    res.render(New)
+    res.render('New')
 })
 
 

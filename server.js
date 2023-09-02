@@ -13,6 +13,8 @@ app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine());
 
 app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
 
 
 
@@ -42,6 +44,7 @@ app.get('/flights/new', (req, res) => {
 
 
 app.post('/flights', async (req, res) => {
+    console.log(req.body);
     try {
         const newFlight = await Flight.create(req.body)
         res.send(newFlight)

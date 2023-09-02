@@ -3,9 +3,9 @@ const React = require("react");
 const New = () => {
   return (
     <>
-      <form>
+      <form action="/flights" method="post">
         <label>Airline : </label>
-        <select>
+        <select name="airline">
           <option disabled selected value>
             {" "}
             -- select an option --{" "}
@@ -15,9 +15,9 @@ const New = () => {
           <option value={"Southwest"}>Southwest</option>
         </select>
         <br />
-        <label>Flight Number : </label><input min='10' max='9999' type="number" />
+        <label>Flight Number : </label><input name="flightNo" placeholder='No. from 10 to 9999' min='10' max='9999' type="number" />
         <br />
-        <label>Date : </label><input type="datetime-local" />
+        <label>Departure date : </label><input name="departs" type="datetime-local" />
         <br />
         <button>Add Flight</button>
       </form>
